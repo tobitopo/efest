@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "spec/**"
+
+permissions:
+  contents: read
+
+jobs:
+  repo-sanity:
+    name: repo-sanity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Comprobar archivos obligatorios y archivos prohibidos
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          required=(
+            "constitution.md"
+            "specs/001-mvp/spec.md"
+            "specs/001-mvp/plan.md"
+            "specs/001-mvp/tasks.md"
+            ".github/CODEOWNERS"
+            "LICENSE"
+          )
+
+          for file in "${required[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error file=$file::Falta el archivo obligatorio $file"
+              exit 1
+            fi
+          done
+
+          forbidden="$(git ls-files | grep -E '\.(vault|key|pem|p12)$' || true)"
+          if [ -n "$forbidden" ]; then
+            echo "::error::Hay archivos prohibidos rastreados:"
+            echo "$forbidden"
+            exit 1
+          fi
+
+          echo "repo-sanity OK"
