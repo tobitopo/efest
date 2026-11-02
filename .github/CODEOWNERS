@@ -1,0 +1,10 @@
+# Propietarios de las rutas sensibles. La revisión de code owners es obligatoria.
+# Persona A (arquitectura y seguridad) y Persona B (backend).
+
+/constitution.md @tobitopo @Akls958
+/specs/ @tobitopo @Akls958
+/AGENTS.md @tobitopo @Akls958
+/.github/ @tobitopo @Akls958
+/scripts/ @tobitopo @Akls958
+/crates/efest-core/src/crypto/ @tobitopo @Akls958
+/src-tauri/capabilities/ @tobitopo @Akls958

@@ -1,0 +1,37 @@
+name: Cambio de spec
+description: Proponer un cambio porque el spec no coincide con la realidad
+title: "[spec-change] "
+labels: ["type:spec-change"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        El spec es la fuente de verdad. Un cambio se propone, se aprueba y se registra antes de implementarse.
+  - type: textarea
+    id: choque
+    attributes:
+      label: Qué choca con la realidad
+      description: Cita el punto exacto del spec o del plan y explica qué ocurre en la práctica.
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: Cambio concreto en el spec, el plan o las tareas.
+    validations:
+      required: true
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto
+      description: Criterios de aceptación, tareas, seguridad, compatibilidad y trabajo ya hecho.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: Confirmación
+      options:
+        - label: No he modificado el spec ni el código por mi cuenta.
+          required: true

@@ -1,0 +1,47 @@
+name: Tarea
+description: Implementar una tarea de un spec
+title: "T?: "
+labels: ["type:task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de empezar, lee `constitution.md`, el spec, el plan y `tasks.md`.
+        Una tarea a la vez. El pull request va hacia la rama del spec.
+  - type: input
+    id: spec
+    attributes:
+      label: Spec
+      placeholder: "001-mvp"
+    validations:
+      required: true
+  - type: input
+    id: tarea
+    attributes:
+      label: Tarea
+      placeholder: "T1"
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance
+      description: Qué incluye y qué queda fuera.
+    validations:
+      required: true
+  - type: textarea
+    id: verificacion
+    attributes:
+      label: Verificación
+      description: Tests primero y comandos que deben pasar.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: Confirmación
+      options:
+        - label: He leído la Constitución y la tarea.
+          required: true
+        - label: No incluiré secretos ni datos reales.
+          required: true

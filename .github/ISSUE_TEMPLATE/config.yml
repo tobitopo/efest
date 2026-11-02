@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Reportar una vulnerabilidad
+    url: https://github.com/tobitopo/efest/security/advisories/new
+    about: No abras un issue público para problemas de seguridad. Usa el reporte privado.
+  - name: Cómo contribuir
+    url: https://github.com/tobitopo/efest/blob/main/CONTRIBUTING.md
+    about: Ramas, commits, pull requests y revisiones.

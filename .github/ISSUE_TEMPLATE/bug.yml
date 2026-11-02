@@ -1,0 +1,48 @@
+name: Bug
+description: Reportar un fallo reproducible
+title: "[bug] "
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Para vulnerabilidades de seguridad, **no uses esta plantilla**: sigue `SECURITY.md`.
+  - type: input
+    id: version
+    attributes:
+      label: Versión o commit
+      placeholder: "commit o versión"
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducir
+      placeholder: "1. ... 2. ... 3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: real
+    attributes:
+      label: Resultado real
+      description: Incluye el mensaje de error exacto, sin secretos.
+    validations:
+      required: true
+  - type: textarea
+    id: entorno
+    attributes:
+      label: Entorno
+      description: Sistema operativo, arquitectura y cualquier dato relevante.
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: Confirmación
+      options:
+        - label: El reporte no contiene secretos ni contraseñas reales.
+          required: true
